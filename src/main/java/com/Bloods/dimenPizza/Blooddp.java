@@ -2,16 +2,19 @@ package com.Bloods.dimenPizza;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.ShapedRecipes;
+import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 
 import com.Bloods.dimenPizza.handler.configHandler;
 import com.Bloods.dimenPizza.handler.recipeHandler;
 import com.Bloods.dimenPizza.init.BDPBlocksLoader;
 import com.Bloods.dimenPizza.init.BDPItemsLoader;
+import com.Bloods.dimenPizza.item.itemArmor;
 import com.Bloods.dimenPizza.item.itemTools;
 import com.Bloods.dimenPizza.proxy.IProxy;
 import com.Bloods.dimenPizza.reference.Reference;
@@ -32,6 +35,9 @@ public class Blooddp {
 	
 	@SidedProxy( clientSide = Reference.Client_Proxy, serverSide = Reference.Server_Proxy)
 	public static IProxy proxy;
+
+	public static Item fancyBoots;
+	public static ArmorMaterial PvEArmorMat = EnumHelper.addArmorMaterial("PvEArmorMat", 1, new int[] {1,1,1,1}, 1);
 	
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event)
@@ -42,6 +48,9 @@ public class Blooddp {
 		
 		BDPItemsLoader.init();
 		BDPBlocksLoader.init();
+		
+		fancyBoots = new itemArmor(PvEArmorMat, 3, "fancyBoots");
+		GameRegistry.registerItem(fancyBoots, "fancyBoots");
 	}
 	@Mod.EventHandler
 	public void init(FMLInitializationEvent event)
@@ -53,5 +62,4 @@ public class Blooddp {
 	{
 		
 	}
-	public static ArmorMaterial casualPvEArmor = EnumHelper.addArmorMaterial("casualPvEArmor", 0, new int[] {1, 1, 1, 1}, 1);
 }
