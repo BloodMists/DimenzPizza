@@ -1,7 +1,8 @@
-package com.Bloods.dimenPizza.items;
+package com.Bloods.dimenPizza.item;
 
 import java.util.List;
 
+import com.Bloods.dimenPizza.creativetab.CreativetabIBDP;
 import com.Bloods.dimenPizza.reference.Reference;
 
 import cpw.mods.fml.relauncher.Side;
@@ -12,19 +13,19 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 
-public class ItemTools extends ItemBDP
+public class itemTools extends ItemBDP
 {
-	public static String[] subTools = {"toolRPin", "toolKnife", "toolCutter", "toolChurn", "toolPress"};
+	public static String[] subTools = {"toolRPin", "toolKnife", "toolCutter", "toolChurn", "toolPress", "knifeBlade"};
 	IIcon[] icons = new IIcon[subTools.length];
 
-	public ItemTools()
+	public itemTools()
 	{
 		super();
 		this.setMaxStackSize(1);
-		this.setHasSubtypes(true);
 	}
 
 	@Override
+	@SideOnly(Side.CLIENT)
 	public void registerIcons(IIconRegister icon)
 	{
 		for (int i=0; i<icons.length; i++)
@@ -52,5 +53,17 @@ public class ItemTools extends ItemBDP
 	{
 		return this.getUnlocalizedName()+"."+subTools[stack.getItemDamage()];
 	}
+	
 
+	public ItemStack getContainerItem(ItemStack is)
+	{
+		if(is.getItemDamage() > getMaxDamage()) return null;
+		return new ItemStack(this, 1, is.getItemDamage() + 0);
+	}
+	
+	public boolean hasContainerItem(ItemStack is)
+	{ return true; }
+	
+	public boolean doesContainerItemLeaveCraftingGrid(ItemStack is)
+	{ return false; }
 }

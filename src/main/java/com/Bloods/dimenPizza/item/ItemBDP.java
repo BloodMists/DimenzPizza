@@ -1,4 +1,4 @@
-package com.Bloods.dimenPizza.items;
+package com.Bloods.dimenPizza.item;
 
 import com.Bloods.BloodTG.reference.Reference;
 import com.Bloods.dimenPizza.creativetab.CreativetabIBDP;
@@ -12,11 +12,11 @@ import net.minecraft.item.ItemStack;
 
 public class ItemBDP extends Item
 {
-	private String type;
 	public ItemBDP()
 	{
 		super();
 		this.setHasSubtypes(true);
+		this.setMaxDamage(0);
 		this.setMaxStackSize(64);
 		this.setCreativeTab(CreativetabIBDP.Dimenz_Pizza_Items);
 		this.setUnlocalizedName(Reference.Mod_ID.toLowerCase());

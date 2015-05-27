@@ -1,4 +1,4 @@
-package com.Bloods.dimenPizza.items;
+package com.Bloods.dimenPizza.item;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 
-public class ItemPizzas extends ItemBDP
+public class itemPizzas extends ItemBDP
 {
 	public static String[] subPizza = 
 		{/*Plain Pizzas*/"pizza", "pizzaSauced", "pizzaChz", "pizzaBeef", "pizzaCkn", "pizzaHam", "pizzaSaus", "pizzaPep", "pizzaShroom",
@@ -29,7 +29,7 @@ public class ItemPizzas extends ItemBDP
 		};
 	IIcon[] icons = new IIcon[subPizza.length];
 	
-	public ItemPizzas()
+	public itemPizzas()
 	{
 		super();
 		this.setMaxStackSize(8);
