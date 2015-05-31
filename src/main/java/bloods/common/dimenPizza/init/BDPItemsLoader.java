@@ -1,5 +1,6 @@
 package bloods.common.dimenPizza.init;
 
+import net.minecraft.item.ItemFood;
 import bloods.common.dimenPizza.reference.Reference;
 import bloods.common.dimenPizza.item.ItemBDP;
 import bloods.common.dimenPizza.item.itemIngredients;
@@ -13,7 +14,7 @@ public class BDPItemsLoader
 {
 	//General Items
 	public static final ItemBDP stuffs = new itemIngredients();
-	public static final ItemBDP pizzas = new itemPizzas();
+	public static final ItemFood pizzas = new itemPizzas();
 	public static final ItemBDP tools = new itemTools();
 
 	public static void init()

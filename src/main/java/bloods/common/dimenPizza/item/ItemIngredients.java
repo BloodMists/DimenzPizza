@@ -14,23 +14,23 @@ import net.minecraft.util.IIcon;
 
 public class itemIngredients extends ItemBDP
 {
-	public static String[] subIngred = 
-		{"ingredTomato", "ingredSauce", "ingredDough", "ingredSalt", "ingredCheese", "ingredChicken", "ingredBeef", "ingredHam", "ingredPinapple",
-		 "ingredSausage", "ingredPepperoni", "ingredSlicedShrooms"
-		};
+	public static String[] subIngred = {"ingredTomato", "ingredSauce", "ingredDough", "ingredSalt", "ingredCheese", "ingredChicken", "ingredBeef",
+		"ingredHam", "ingredPinapple","ingredSausage", "ingredPepperoni", "ingredSlicedShrooms", "ingredFlour", "ingredThreshedWheat"};
 	IIcon[] icons = new IIcon[subIngred.length];
 	
 	public itemIngredients()
 	{
 		super();
+		this.setMaxDamage(0);
 		this.setMaxStackSize(64);
 	}
 
 	@Override
+	@SideOnly(Side.CLIENT)
 	public void registerIcons(IIconRegister icon)
 	{
 		for (int i=0; i<icons.length; i++)
-			this.icons[i] = icon.registerIcon(Reference.Mod_ID.toLowerCase() + ":" + subIngred[i]);
+			this.icons[i] = icon.registerIcon(Reference.itemname + ":" + subIngred[i]);
 	}
 
 	@Override
@@ -51,8 +51,5 @@ public class itemIngredients extends ItemBDP
 
 	@Override
 	public String getUnlocalizedName(ItemStack stack)
-	{
-		return this.getUnlocalizedName()+"."+subIngred[stack.getItemDamage()];
-	}
-
+	{	return this.getUnlocalizedName()+"."+subIngred[stack.getItemDamage()];}
 }

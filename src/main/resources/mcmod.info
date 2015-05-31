@@ -1,0 +1,17 @@
+
+[
+{
+"modid": "BloodTG",
+"name": "Blood's Travel Gear",
+"description": "Additional armour items for RPG style maps. Made for the Learning Magic mod pack",
+"version": "1.0",
+"mcversion": "${mcversion}",
+"url": "",
+"updateUrl": "",
+"authorList": ["BloodMists"],
+"credits": "Azanor for Baubles, BluSunRize for Traveller's Gear",
+"logoFile": "",
+"screenshots": [],
+"dependencies": []
+}
+]

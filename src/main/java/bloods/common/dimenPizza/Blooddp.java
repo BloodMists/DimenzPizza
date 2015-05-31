@@ -37,7 +37,7 @@ public class Blooddp {
 	public static IProxy proxy;
 
 	public static Item fancyBoots;
-	public static ArmorMaterial PvEArmorMat = EnumHelper.addArmorMaterial("PvEArmorMat", 1, new int[] {1,1,1,1}, 1);
+	public static ArmorMaterial PvEArmorMat = EnumHelper.addArmorMaterial("PvEArmorMat", 0, new int[] {2,2,2,2}, 0);
 	
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event)

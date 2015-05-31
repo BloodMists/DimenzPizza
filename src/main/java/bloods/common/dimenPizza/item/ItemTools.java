@@ -14,7 +14,7 @@ import net.minecraft.util.IIcon;
 
 public class itemTools extends ItemBDP
 {
-	public static String[] subTools = {"toolRPin", "toolKnife", "toolCutter", "toolChurn", "toolPress", "knifeBlade"};
+	public static String[] subTools = {"toolRPin", "toolKnife", "toolCutter", "toolChurn", "toolPress", "toolFlail", "knifeBlade"};
 	IIcon[] icons = new IIcon[subTools.length];
 
 	public itemTools()
@@ -28,7 +28,7 @@ public class itemTools extends ItemBDP
 	public void registerIcons(IIconRegister icon)
 	{
 		for (int i=0; i<icons.length; i++)
-			this.icons[i] = icon.registerIcon(Reference.Mod_ID.toLowerCase() + ":" + subTools[i]);
+			this.icons[i] = icon.registerIcon(Reference.itemname + ":" + subTools[i]);
 	}
 
 	@Override
@@ -49,16 +49,11 @@ public class itemTools extends ItemBDP
 
 	@Override
 	public String getUnlocalizedName(ItemStack stack)
-	{
-		return this.getUnlocalizedName()+"."+subTools[stack.getItemDamage()];
-	}
+	{	return this.getUnlocalizedName()+"."+subTools[stack.getItemDamage()];}
 	
 
 	public ItemStack getContainerItem(ItemStack is)
-	{
-		if(is.getItemDamage() > getMaxDamage()) return null;
-		return new ItemStack(this, 1, is.getItemDamage() + 0);
-	}
+	{ return is;}
 	
 	public boolean hasContainerItem(ItemStack is)
 	{ return true; }

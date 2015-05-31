@@ -20,12 +20,20 @@ public class itemArmor extends ItemArmor
 	}
 	
 	@Override
-	public void onArmorTick(World world, EntityPlayer player, ItemStack itemStack) {
-		
-				if (player.getCurrentArmor(0) == null && player.getCurrentArmor(1) == null && player.getCurrentArmor(2) == null && player.getCurrentArmor(3).getItem().equals(Blooddp.fancyBoots))
-				{
-					player.addPotionEffect(new PotionEffect(Potion.regeneration.id, 10, 2));
-					player.fallDistance = 0;
-				}
+	public void onArmorTick(World world, EntityPlayer player, ItemStack itemStack)
+	{
+		if (itemStack.getItem().equals(Blooddp.fancyBoots))
+		{
+			if (player.getCurrentArmor(1) == null && player.getCurrentArmor(2) == null && player.getCurrentArmor(3) == null)				
+			{
+				player.addPotionEffect(new PotionEffect(Potion.regeneration.id, 30, 3));
+			}
+/*			else if (player.getCurrentArmor(1) != null || player.getCurrentArmor(2) != null)
+			{
+				player.addPotionEffect(new PotionEffect(Potion.weakness.id, 10, 0));
+			}*/
+		//player.addPotionEffect(new PotionEffect(Potion.jump.id, 10, 3));
+		player.fallDistance = 0;
+		}
 	}
 }
