@@ -37,7 +37,8 @@ public class Blooddp {
 	public static IProxy proxy;
 
 	public static Item fancyBoots;
-	public static ArmorMaterial PvEArmorMat = EnumHelper.addArmorMaterial("PvEArmorMat", 0, new int[] {2,2,2,2}, 0);
+	public static Item platedWings;
+	public static ArmorMaterial BloodMat = EnumHelper.addArmorMaterial("BloodMat", 0, new int[] {2,0,2,2}, 0);
 	
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event)
@@ -49,7 +50,10 @@ public class Blooddp {
 		BDPItemsLoader.init();
 		BDPBlocksLoader.init();
 		
-		fancyBoots = new itemArmor(PvEArmorMat, 3, "fancyBoots");
+		platedWings = new itemArmor(BloodMat, 1, "platedWings");
+		GameRegistry.registerItem(platedWings, "platedWings");
+		
+		fancyBoots = new itemArmor(BloodMat, 3, "fancyBoots");
 		GameRegistry.registerItem(fancyBoots, "fancyBoots");
 	}
 	@Mod.EventHandler

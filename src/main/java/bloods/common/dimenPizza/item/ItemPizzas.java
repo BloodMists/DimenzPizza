@@ -32,7 +32,7 @@ public class itemPizzas extends ItemFood
 		this.setMaxDamage(0);
 		this.setMaxStackSize(8);
 		this.setCreativeTab(CreativetabIBDP.Dimenz_Pizza_Items);
-		this.setUnlocalizedName(Reference.itemname);
+		this.setUnlocalizedName(Reference.Mod_ID.toLowerCase());
 	}
 	
 	public int getMaxItemUseDuration(ItemStack p_77626_1_)
@@ -43,7 +43,7 @@ public class itemPizzas extends ItemFood
 	public void registerIcons(IIconRegister icon)
 	{
 		for (int i=0; i<icons.length; i++)
-			this.icons[i] = icon.registerIcon(Reference.itemname + ":" + subPizza[i]);
+			this.icons[i] = icon.registerIcon(Reference.ASSETS + subPizza[i]);
 	}
 
 	@Override
@@ -65,6 +65,6 @@ public class itemPizzas extends ItemFood
 	@Override
 	public String getUnlocalizedName(ItemStack stack)
 	{
-		return this.getUnlocalizedName()+"."+subPizza[stack.getItemDamage()];
+		return Reference.getItemName(subPizza[stack.getItemDamage()]);
 	}
 }

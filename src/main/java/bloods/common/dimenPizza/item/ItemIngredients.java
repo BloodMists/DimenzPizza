@@ -14,8 +14,8 @@ import net.minecraft.util.IIcon;
 
 public class itemIngredients extends ItemBDP
 {
-	public static String[] subIngred = {"ingredTomato", "ingredSauce", "ingredDough", "ingredSalt", "ingredCheese", "ingredChicken", "ingredBeef",
-		"ingredHam", "ingredPinapple","ingredSausage", "ingredPepperoni", "ingredSlicedShrooms", "ingredFlour", "ingredThreshedWheat"};
+	public static String[] subIngred = {"tomato", "sauce", "dough", "salt", "cheese", "cutChicken", "cutBeef",
+		"cutHam", "cutPinapple", "cutSausage", "cutPepperoni", "cutShrooms", "flour", "threshed_Wheat"};
 	IIcon[] icons = new IIcon[subIngred.length];
 	
 	public itemIngredients()
@@ -30,7 +30,7 @@ public class itemIngredients extends ItemBDP
 	public void registerIcons(IIconRegister icon)
 	{
 		for (int i=0; i<icons.length; i++)
-			this.icons[i] = icon.registerIcon(Reference.itemname + ":" + subIngred[i]);
+			this.icons[i] = icon.registerIcon(Reference.ASSETS + subIngred[i]);
 	}
 
 	@Override
@@ -51,5 +51,5 @@ public class itemIngredients extends ItemBDP
 
 	@Override
 	public String getUnlocalizedName(ItemStack stack)
-	{	return this.getUnlocalizedName()+"."+subIngred[stack.getItemDamage()];}
+	{	return Reference.getItemName(subIngred[stack.getItemDamage()]);}
 }

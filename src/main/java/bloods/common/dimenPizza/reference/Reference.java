@@ -8,5 +8,6 @@ public class Reference
 	public static final String Client_Proxy = "bloods.common.dimenPizza.proxy.ClientProxy";
 	public static final String Server_Proxy = "bloods.common.dimenPizza.proxy.ServerProxy";
 	public static final String Gui_Factory = "bloods.common.dimenPizza.client.gui.GuiFactory";
-	public static final String itemname = "blooddp";
+	public static final String getItemName(String s) { return "item." + Reference.Mod_ID.toLowerCase() + "." + s;}
+	public static final String ASSETS = Reference.Mod_ID.toLowerCase() + ":";
 }

@@ -50,18 +50,22 @@ public class recipeHandler {
 				{new ItemStack(BDPItemsLoader.stuffs,1,2), new ItemStack(BDPItemsLoader.tools,1,0)});
 		
 		//other
-		//GameRegistry.addShapelessRecipe(new ItemStack(BDPItemsLoader.stuffs,#,#), new Object[]
-		//		{new ItemStack(BDPItemsLoader.name,#,#), new ItemStack()});
+		GameRegistry.addShapelessRecipe(new ItemStack(BDPItemsLoader.stuffs,1,12), new Object[]
+				{new ItemStack(BDPItemsLoader.stuffs,1,13), new ItemStack(Blocks.cobblestone)});//Flour
 		GameRegistry.addShapelessRecipe(new ItemStack(BDPItemsLoader.stuffs,3,13), new Object[]
-				{new ItemStack(BDPItemsLoader.tools,1,5), new ItemStack(Items.wheat)});
+				{new ItemStack(BDPItemsLoader.tools,1,5), new ItemStack(Items.wheat)});//Threshed Wheat
 		GameRegistry.addShapelessRecipe(new ItemStack(BDPItemsLoader.stuffs,2,11), new Object[]
-				{new ItemStack(BDPItemsLoader.tools,1,1), new ItemStack(Blocks.brown_mushroom)});
+				{new ItemStack(BDPItemsLoader.tools,1,1), new ItemStack(Blocks.brown_mushroom)});//Diced Mushrooms
 		GameRegistry.addShapelessRecipe(new ItemStack(BDPItemsLoader.stuffs,2,11), new Object[]
-				{new ItemStack(BDPItemsLoader.tools,1,1), new ItemStack(Blocks.red_mushroom)});
+				{new ItemStack(BDPItemsLoader.tools,1,1), new ItemStack(Blocks.red_mushroom)});//Diced Mushrooms
 		GameRegistry.addShapelessRecipe(new ItemStack(BDPItemsLoader.stuffs,1,4), new Object[]
-				{new ItemStack(BDPItemsLoader.tools,1,3), new ItemStack(Items.milk_bucket)});
+				{new ItemStack(BDPItemsLoader.tools,1,3), new ItemStack(Items.milk_bucket)});//Cheese
 		GameRegistry.addShapelessRecipe(new ItemStack(BDPItemsLoader.stuffs,1,6), new Object[]
-				{new ItemStack(BDPItemsLoader.tools,1,1), new ItemStack(Items.beef)});
+				{new ItemStack(BDPItemsLoader.tools,1,1), new ItemStack(Items.beef)});//Beef Chunks
+		GameRegistry.addShapelessRecipe(new ItemStack(BDPItemsLoader.stuffs,1,6), new Object[]
+				{new ItemStack(BDPItemsLoader.tools,1,1), new ItemStack(Items.chicken)});//Chicken Chunks
+		GameRegistry.addShapelessRecipe(new ItemStack(BDPItemsLoader.stuffs,1,6), new Object[]
+				{new ItemStack(BDPItemsLoader.tools,1,1), new ItemStack(Items.porkchop)});//Sliced Ham
 	}
 	
 	private static void initAddOredict()

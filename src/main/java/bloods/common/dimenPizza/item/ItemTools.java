@@ -28,7 +28,7 @@ public class itemTools extends ItemBDP
 	public void registerIcons(IIconRegister icon)
 	{
 		for (int i=0; i<icons.length; i++)
-			this.icons[i] = icon.registerIcon(Reference.itemname + ":" + subTools[i]);
+			this.icons[i] = icon.registerIcon(Reference.ASSETS + subTools[i]);
 	}
 
 	@Override
@@ -49,7 +49,7 @@ public class itemTools extends ItemBDP
 
 	@Override
 	public String getUnlocalizedName(ItemStack stack)
-	{	return this.getUnlocalizedName()+"."+subTools[stack.getItemDamage()];}
+	{	return Reference.getItemName(subTools[stack.getItemDamage()]);}
 	
 
 	public ItemStack getContainerItem(ItemStack is)
