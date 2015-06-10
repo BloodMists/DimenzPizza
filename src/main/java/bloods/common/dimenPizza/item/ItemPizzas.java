@@ -32,7 +32,7 @@ public class itemPizzas extends ItemFood
 		this.setMaxDamage(0);
 		this.setMaxStackSize(8);
 		this.setCreativeTab(CreativetabIBDP.Dimenz_Pizza_Items);
-		this.setUnlocalizedName(Reference.Mod_ID.toLowerCase());
+		this.setUnlocalizedName(Reference.getItemName(getIconString()));
 	}
 	
 	public int getMaxItemUseDuration(ItemStack p_77626_1_)

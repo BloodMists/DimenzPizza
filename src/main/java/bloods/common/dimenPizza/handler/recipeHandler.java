@@ -37,9 +37,21 @@ public class recipeHandler {
 		//pizzas
 		
 		//other
+	if (configHandler.gGIsEnabled == true)
+	{
+		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Blooddp.leafBand, 1), new Object[]
+				{"LLL","LNL","   ",'N', Items.nether_star, 'L', Blocks.leaves}));
+		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Blooddp.forgottenExo, 1), new Object[]
+				{"III","I I","IBI", 'I', "ingotIron", 'B', Items.diamond_boots}));
+		
+		if (configHandler.godlyGear == true)
+		{
+		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Blooddp.platedWings, 1), new Object[]
+				{"F F","NCN","BBB",'F',Items.feather, 'N', Items.nether_star, 'B', Blocks.diamond_ore, 'C', Items.diamond_chestplate}));
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Blooddp.fancyBoots, 1), new Object[]
 				{"D D","D D","FNF",'D', "gemDiamond", 'F', Items.feather, 'N', Items.nether_star}));
-		
+		}
+	}
 		//Shapeless
 		//tools
 		GameRegistry.addShapelessRecipe(new ItemStack(BDPItemsLoader.tools,1,1), new Object[]
@@ -66,6 +78,8 @@ public class recipeHandler {
 				{new ItemStack(BDPItemsLoader.tools,1,1), new ItemStack(Items.chicken)});//Chicken Chunks
 		GameRegistry.addShapelessRecipe(new ItemStack(BDPItemsLoader.stuffs,1,6), new Object[]
 				{new ItemStack(BDPItemsLoader.tools,1,1), new ItemStack(Items.porkchop)});//Sliced Ham
+		GameRegistry.addShapelessRecipe(new ItemStack(BDPItemsLoader.seed, 1), new Object[]
+				{new ItemStack(BDPItemsLoader.stuffs,1,0)});
 	}
 	
 	private static void initAddOredict()

@@ -10,7 +10,8 @@ import net.minecraftforge.common.config.Configuration;
 public class configHandler
 {
 	public static Configuration configuration;
-	public static boolean testValue = false;
+	public static boolean godlyGear = false;
+	public static boolean gGIsEnabled = false;
 	
 	public static void init(File configFile)
 	{
@@ -23,7 +24,9 @@ public class configHandler
 	
 	private static void loadConfiguration()
 	{
-		testValue = configuration.getBoolean("configValue", Configuration.CATEGORY_GENERAL, false, "config value goes here");
+		
+		godlyGear = configuration.getBoolean("GodlyGearCraftable", Configuration.CATEGORY_GENERAL, false, "Allow Crafting");
+		gGIsEnabled = configuration.getBoolean("GodlyGearEnabled?", Configuration.CATEGORY_GENERAL, true, "Enables Godly Gear in survival");
 		
 		if (configuration.hasChanged())
 		{

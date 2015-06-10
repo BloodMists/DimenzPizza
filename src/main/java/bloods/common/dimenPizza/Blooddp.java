@@ -1,6 +1,8 @@
 package bloods.common.dimenPizza;
 
+import bloods.common.dimenPizza.handler.chestLootHandler;
 import bloods.common.dimenPizza.handler.configHandler;
+import bloods.common.dimenPizza.handler.eventHandler;
 import bloods.common.dimenPizza.handler.recipeHandler;
 import bloods.common.dimenPizza.init.BDPBlocksLoader;
 import bloods.common.dimenPizza.init.BDPItemsLoader;
@@ -16,6 +18,7 @@ import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.ShapedRecipes;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 
@@ -37,8 +40,10 @@ public class Blooddp {
 	public static IProxy proxy;
 
 	public static Item fancyBoots;
+	public static Item forgottenExo;
 	public static Item platedWings;
-	public static ArmorMaterial BloodMat = EnumHelper.addArmorMaterial("BloodMat", 0, new int[] {2,0,2,2}, 0);
+	public static Item leafBand;
+	public static ArmorMaterial BloodMat = EnumHelper.addArmorMaterial("BloodMat", 0, new int[] {2,0,8,2}, 0);
 	
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event)
@@ -49,9 +54,16 @@ public class Blooddp {
 		
 		BDPItemsLoader.init();
 		BDPBlocksLoader.init();
+		chestLootHandler.init();
+		
+		leafBand = new itemArmor(BloodMat, 0, "leafBand");
+		GameRegistry.registerItem(leafBand, "leafBand");
 		
 		platedWings = new itemArmor(BloodMat, 1, "platedWings");
 		GameRegistry.registerItem(platedWings, "platedWings");
+		
+		forgottenExo = new itemArmor(BloodMat, 2, "forgottenExo");
+		GameRegistry.registerItem(forgottenExo, "forgottenExo");
 		
 		fancyBoots = new itemArmor(BloodMat, 3, "fancyBoots");
 		GameRegistry.registerItem(fancyBoots, "fancyBoots");
@@ -60,6 +72,7 @@ public class Blooddp {
 	public void init(FMLInitializationEvent event)
 	{
 		recipeHandler.init();
+		MinecraftForge.EVENT_BUS.register(new eventHandler());
 	}
 	@Mod.EventHandler
 	public void postInit(FMLPostInitializationEvent event)

@@ -18,12 +18,6 @@ public class ItemBDP extends Item
 		this.setMaxDamage(0);
 		this.setMaxStackSize(64);
 		this.setCreativeTab(CreativetabIBDP.Dimenz_Pizza_Items);
-		this.setUnlocalizedName(Reference.Mod_ID.toLowerCase());
-	}
-
-	protected void setUnlocalName(String name)
-	{
-		this.setUnlocalizedName(Reference.Mod_ID.toLowerCase() + "." + name);
-		this.setTextureName(Reference.Mod_ID.toLowerCase() + ":" + name);		
+		this.setUnlocalizedName(Reference.getItemName(iconString));
 	}
 }
