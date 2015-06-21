@@ -35,7 +35,9 @@ public class recipeHandler {
 				{" H "," BI"," H ",'H',"slabWood",'B', Items.bowl, 'I', "ingotIron"}));
 		
 		//pizzas
-		
+		GameRegistry.addShapedRecipe(new ItemStack(BDPItemsLoader.pizzas, 1, 0), new Object[]
+				{" Cc","   "," E ", 'T',Blocks.torch, 'E',new ItemStack(BDPItemsLoader.pizzas, 1, 0),'C',new ItemStack(BDPItemsLoader.stuffs, 1, 4),
+				 'c',new ItemStack(BDPItemsLoader.stuffs, 1, 5)});//Chicken Pizza
 		//other
 	if (configHandler.gGIsEnabled == true)
 	{
@@ -44,7 +46,7 @@ public class recipeHandler {
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Blooddp.forgottenExo, 1), new Object[]
 				{"III","I I","IBI", 'I', "ingotIron", 'B', Items.diamond_boots}));
 		
-		if (configHandler.godlyGear == true)
+		if (configHandler.gGearCraftable == true)
 		{
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Blooddp.platedWings, 1), new Object[]
 				{"F F","NCN","BBB",'F',Items.feather, 'N', Items.nether_star, 'B', Blocks.diamond_ore, 'C', Items.diamond_chestplate}));
@@ -52,6 +54,15 @@ public class recipeHandler {
 				{"D D","D D","FNF",'D', "gemDiamond", 'F', Items.feather, 'N', Items.nether_star}));
 		}
 	}
+		GameRegistry.addRecipe(new ItemStack(Blooddp.helmBlooded, 1), new Object[]
+				{"NNN","NRN","DDD", 'N',Items.nether_star, 'R',Blocks.redstone_ore, 'D',Blocks.diamond_block}); //Blooded Helm
+		GameRegistry.addRecipe(new ItemStack(Blooddp.chestpieceBlooded, 1), new Object[]
+				{"NEN","NNN","NNN", 'N',Items.nether_star, 'E',Blocks.emerald_ore});							//Blooded Chestplate
+		GameRegistry.addRecipe(new ItemStack(Blooddp.leggingsBlooded, 1), new Object[]
+				{"NNN","NDN","NEN", 'N',Items.nether_star, 'E',Blocks.emerald_ore});							//Blooded Leggings
+		GameRegistry.addRecipe(new ItemStack(Blooddp.bootsBlooded, 1), new Object[]
+				{"NRN","NDN","SBS", 'N', Items.nether_star, 'R',Blocks.redstone_ore, 'D',Blocks.diamond_block,
+					'B',Items.water_bucket, 'S', Items.slime_ball});											//Blooded Boots
 		//Shapeless
 		//tools
 		GameRegistry.addShapelessRecipe(new ItemStack(BDPItemsLoader.tools,1,1), new Object[]

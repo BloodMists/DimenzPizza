@@ -27,7 +27,7 @@ public class cropTomato extends BlockBush implements IGrowable
 	protected int maxGrowthStage = 5;
 	
 	@SideOnly(Side.CLIENT)
-	protected IIcon[] crop;
+	public IIcon[] crop;
 
 	public cropTomato()
 	{
@@ -39,7 +39,7 @@ public class cropTomato extends BlockBush implements IGrowable
 		this.setStepSound(soundTypeGrass);
 		this.disableStats();
 		this.setBlockName(Reference.getBlockName(textureName));
-		this.setBlockTextureName(Reference.ASSETS + crop);
+		this.setBlockTextureName(Reference.ASSETS + "cropTomato");
 	}
 
 	@Override
@@ -77,7 +77,7 @@ public class cropTomato extends BlockBush implements IGrowable
 	{
 		ArrayList<ItemStack> list = new ArrayList<ItemStack>();
 		list.add(new ItemStack(BDPItemsLoader.seed, 1));
-		if(metadata==7)
+		if(metadata==5)
 		{
 			list.add(new ItemStack(BDPItemsLoader.stuffs, 4, 0));
 		}
@@ -85,17 +85,14 @@ public class cropTomato extends BlockBush implements IGrowable
 	}
 
 	@Override
-	public Item getItemDropped(int par1, Random parRand, int parFortune)
+	@SideOnly(Side.CLIENT)
+	public void registerBlockIcons(IIconRegister reg) 
 	{
-		return (BDPItemsLoader.stuffs);
+		crop = new IIcon[5];
+		for(int i=0;i<this.crop.length;i++)
+		crop[i] = reg.registerIcon(this.getTextureName() + i);
 	}
-	
-/*	@Override
-    public void dropBlockAsItemWithChance(World world, int par2, int par3, int par4, int par5, float par6, int par7)
-    {
-        super.dropBlockAsItemWithChance(world, par2, par3, par4, par5, 1.0f, par7);
-    }*/
-	
+
 	@Override
 	public int getRenderType()
 	{
@@ -106,7 +103,13 @@ public class cropTomato extends BlockBush implements IGrowable
 	@SideOnly(Side.CLIENT)
 	public IIcon getIcon(int parSide, int parGrowthStage)
 	{
-		return crop[parGrowthStage];
+		return crop[parGrowthStage>=4?4:parGrowthStage];
+	}
+
+	@Override
+    public void dropBlockAsItemWithChance(World world, int x, int y, int z, int meta, float f, int i)
+	{
+    	super.dropBlockAsItemWithChance(world, x, y, z, meta, f, 0);
 	}
 
 	//Need to implement the IGrowable interface methods
@@ -131,13 +134,9 @@ public class cropTomato extends BlockBush implements IGrowable
 		incrementGrowStage(parWorld, parRand, parX, parY, parZ);
 	}
 
-	protected Item func_149866_i()
-	   {
-	       return Items.wheat_seeds;
-	   }
+	public int damageDropped(int meta){ return 0;}
+	
+	protected Item func_149866_i(){return BDPItemsLoader.seed;}
 
-	   protected Item func_149865_P()
-	   {
-	       return Items.wheat;
-	   }
+	protected Item func_149865_P(){return BDPItemsLoader.stuffs;}
 }

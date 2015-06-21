@@ -1,11 +1,15 @@
 package bloods.common.dimenPizza.item;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import bloods.common.dimenPizza.creativetab.CreativetabBBDP;
 import bloods.common.dimenPizza.creativetab.CreativetabIBDP;
 import bloods.common.dimenPizza.init.BDPBlocksLoader;
 import bloods.common.dimenPizza.reference.Reference;
 import net.minecraft.block.Block;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemSeeds;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.IBlockAccess;
@@ -16,12 +20,20 @@ import net.minecraftforge.common.util.ForgeDirection;
 
 public class seedTomato extends ItemBDP implements IPlantable
 {
+	private final Block soilID = Blocks.farmland;
 
-	public seedTomato(Block p_i45352_1_, Block p_i45352_2_) {
+	public seedTomato(Block parPlant, Block soilID) {
 		super();
 		this.setMaxStackSize(64);
 		this.setCreativeTab(CreativetabIBDP.Dimenz_Pizza_Items);
-		this.setUnlocalizedName(Reference.getItemName(iconString));
+		this.setUnlocalizedName(Reference.Mod_ID.toLowerCase() + "." + "seedTomato");		
+	}
+	
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void registerIcons(IIconRegister icon)
+	{
+		this.itemIcon = icon.registerIcon(Reference.ASSETS + "seedTomato");
 	}
 
 	@Override
@@ -31,15 +43,15 @@ public class seedTomato extends ItemBDP implements IPlantable
 		{
 			return false;
 		}
-			if (player.canPlayerEdit(parX, parY+1, parZ, par7, stack))
+		else if (player.canPlayerEdit(parX, parY+1, parZ, par7, stack))
+		{
+			if (world.getBlock(parX, parY, parZ).canSustainPlant(world,parX,parY,parZ,ForgeDirection.UP,this)&& world.isAirBlock(parX,parY+1,parZ))
 			{
-				if (world.getBlock(parX, parY, parZ).canSustainPlant(world,parX,parY,parZ,ForgeDirection.UP,this)&& world.isAirBlock(parX,parY+1,parZ))
-				{
-					world.setBlock(parX, parY+1, parZ, BDPBlocksLoader.tomato);
-				}
+				world.setBlock(parX, parY+1, parZ, BDPBlocksLoader.tomato);
 				--stack.stackSize;
-				return true;
-				}
+			}
+			return true;
+		}
 		else
 		{
 			return false;
@@ -63,5 +75,4 @@ public class seedTomato extends ItemBDP implements IPlantable
 		// TODO Auto-generated method stub
 		return 0;
 	}
-
 }

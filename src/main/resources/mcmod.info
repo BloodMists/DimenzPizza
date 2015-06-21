@@ -1,15 +1,15 @@
 
 [
 {
-"modid": "BloodTG",
-"name": "Blood's Travel Gear",
-"description": "Additional armour items for RPG style maps. Made for the Learning Magic mod pack",
+"modid": "BloodDP",
+"name": "Dimensionz's Pizza(Shh frenchie)",
+"description": "An "in depth" pizza mod made for Dimensionz75 of the HatFilms fan server, HatVentures",
 "version": "1.0",
 "mcversion": "${mcversion}",
 "url": "",
 "updateUrl": "",
 "authorList": ["BloodMists"],
-"credits": "Azanor for Baubles, BluSunRize for Traveller's Gear",
+"credits": "The large miriad of people whom help me learn how to do the thing with the thing",
 "logoFile": "",
 "screenshots": [],
 "dependencies": []

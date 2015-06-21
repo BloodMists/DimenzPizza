@@ -7,8 +7,10 @@ import bloods.common.dimenPizza.reference.Reference;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
@@ -66,5 +68,17 @@ public class itemPizzas extends ItemFood
 	public String getUnlocalizedName(ItemStack stack)
 	{
 		return Reference.getItemName(subPizza[stack.getItemDamage()]);
+	}
+
+	@SideOnly(Side.CLIENT)
+	public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean b)
+	{
+		if (GuiScreen.isShiftKeyDown())
+		{
+			if (stack.getItemDamage() == 6)
+			{
+				list.add(":3");
+			}
+		}		
 	}
 }

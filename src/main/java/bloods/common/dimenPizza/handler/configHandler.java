@@ -10,8 +10,9 @@ import net.minecraftforge.common.config.Configuration;
 public class configHandler
 {
 	public static Configuration configuration;
-	public static boolean godlyGear = false;
+	public static boolean gGearCraftable = false;
 	public static boolean gGIsEnabled = false;
+	public static int icedBootsID = 90;
 	
 	public static void init(File configFile)
 	{
@@ -25,8 +26,10 @@ public class configHandler
 	private static void loadConfiguration()
 	{
 		
-		godlyGear = configuration.getBoolean("GodlyGearCraftable", Configuration.CATEGORY_GENERAL, false, "Allow Crafting");
+		gGearCraftable = configuration.getBoolean("GodlyGearCraftable", Configuration.CATEGORY_GENERAL, false, "Allow Crafting");
 		gGIsEnabled = configuration.getBoolean("GodlyGearEnabled?", Configuration.CATEGORY_GENERAL, true, "Enables Godly Gear in survival");
+		
+		icedBootsID = configuration.getInt("EnchantmentID:Icy", Configuration.CATEGORY_GENERAL, 90, 62, 255, "EnchantmentID:Icy");
 		
 		if (configuration.hasChanged())
 		{

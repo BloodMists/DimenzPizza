@@ -17,7 +17,7 @@ public class eventHandler
 			ItemStack armor = player.getEquipmentInSlot(3);
 			if (armor == null || !armor.getItem().equals(Blooddp.platedWings))
 			{
-				if (player.capabilities.allowFlying)
+				if (player.capabilities.allowFlying && !player.capabilities.isCreativeMode)
 				{
 					player.capabilities.allowFlying = false;
 					//logHelper.info("Flight Disabled");

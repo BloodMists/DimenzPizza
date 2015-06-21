@@ -1,57 +1,81 @@
 #Items
+
+#item.blooddp.fancyBoots.name=Fancy Boots
+#item.blooddp.forgottenExo.name=Rusty Exo-Legs
+#item.blooddp.platedWings.name=Plated Wings
+#item.blooddp.leafBand.name=Leaf Circlet
+
+item.blooddp.seedTomato.name=Tomato Seeds
+
 #Ingredients
-#item.blooddp.ingredTomato.name= Tomatoe
-#item.blooddp.ingredSauce.name= Pizza Sauce
-#item.blooddp.ingredDough.name= Pizza Dough
-#item.blooddp.ingredSalt.name= Salt
-#item.blooddp.ingredCheese.name= Cheese
-#item.blooddp.ingredChicken.name= Chicken Chunks
-#item.blooddp.ingredBeef.name= Beef Chunks
-#item.blooddp.ingredHam.name= Sliced Ham
-#item.blooddp.ingredPineapple.name= Pineapple Chunks
-#item.blooddp.ingredSlicedShrooms.name= Diced Mushrooms
+#item.blooddp.tomato.name=Tomato
+#item.blooddp.sauce.name=Pizza Sauce
+item.blooddp.dough.name=Pizza Dough
+#item.blooddp.salt.name=Salt
+item.blooddp.cheese.name=Cheese
+#item.blooddp.cutChicken.name=Chicken Chunks
+#item.blooddp.cutBeef.name=Beef Chunks
+#item.blooddp.cutHam.name=Sliced Ham
+#item.blooddp.cutPineapple.name=Pineapple Chunks
+#item.blooddp.cutShrooms.name=Diced Mushrooms
+item.blooddp.flour.name=Flour
+item.blooddp.threshed_Wheat.name=Threshed Wheat
 
 #Pizzas
-item.blooddp.pizzaEmpty.name=
-item.blooddp.pizzaSauced.name=
-item.blooddp.pizzaChz.name=
-item.blooddp.pizzaChzB.name=
-item.blooddp.pizzaChzCkn.name=
-item.blooddp.pizzaChzH.name=
-item.blooddp.pizzaChzS.name=
-item.blooddp.pizzaChzPep.name=
-item.blooddp.pizzaChzCknB.name=
-item.blooddp.pizzaChzCknS.name=
-item.blooddp.pizzaChzCknShroom.name=
-item.blooddp.pizzaSuprime.name=
-item.blooddp.pizzaHawaiian.name=
-item.blooddp.pizzaMeatLvr.name=
+#item.blooddp.pizzaEmpty.name=Rolled Pizza Dough
+#item.blooddp.pizzaSauced.name=Sauced Pizza Dough
+#item.blooddp.pizzaChz.name=Cheese Pizza
+#item.blooddp.pizzaBeef.name=Beefy Delight
+#item.blooddp.pizzaCkn.name=Chicken Pizza
+#item.blooddp.pizzaHam.name=Ham Lovers
+#item.blooddp.pizzaSaus.name=Sausage Feast
+#item.blooddp.pizzaPep.name=Peperoni Pizza
+#item.blooddp.pizzaShroom.name=Mushroom Pizza
+#item.blooddp.pizzaCknBeef.name=Flying Beef Pizza
+#item.blooddp.pizzaCknSaus.name=Chicken w/Sausage Pizza
+#item.blooddp.pizzaCknPep.name=Chicken & Peperoni Pizza
+#item.blooddp.pizzaCknShroom.name=Chicken Pizza w/Mushrooms
+#item.blooddp.pizzaBeefSaus.name=Beef & Sausage Pizza
+#item.blooddp.pizzaBeefPep.name=Beef & Peperoni Pizza
+#item.blooddp.pizzaBeefShroom.name=Sky Beef Pizza
+#item.blooddp.pizzaSausHam.name=Ham & Sausage Pizza
+#item.blooddp.pizzaSausPep.name=Sausage & Peperoni
+#item.blooddp.pizzaSausShroom.name=Mushroomhead Pizza
+#item.blooddp.pizzaShroomHam.name=Ham & Mushroom Pizza
+#item.blooddp.pizzaShroomPep.name=Mushroom & Peperoni Pizza
+#item.blooddp.pizzaSuprime.name=Suprime Pizza
+#item.blooddp.pizzaHawaiian.name=Hawiian Pizza
+#item.blooddp.pizzaMeatLvr.name=Meat Lovers Pizza
 
 #Slices
-item.blooddp.sliceChz.name=
-item.blooddp.sliceChzB.name=
-item.blooddp.sliceChzCkn.name=
-item.blooddp.sliceChzH.name
-item.blooddp.sliceChzS.name=
-item.blooddp.sliceChzPep.name=
-item.blooddp.sliceChzCknB.name=
-item.blooddp.sliceChzCknS.name=
-item.blooddp.sliceChzCknShroom.name=
-item.blooddp.sliceSuprime.name=
-item.blooddp.sliceHawaiian.name=
-item.blooddp.sliceMeatLvr.name=
+#item.blooddp.sliceChz.name=
+#item.blooddp.sliceChzB.name=
+#item.blooddp.sliceChzCkn.name=
+#item.blooddp.sliceChzH.name
+#item.blooddp.sliceChzS.name=
+#item.blooddp.sliceChzPep.name=
+#item.blooddp.sliceChzCknB.name=
+#item.blooddp.sliceChzCknS.name=
+#item.blooddp.sliceChzCknShroom.name=
+#item.blooddp.sliceSuprime.name=
+#item.blooddp.sliceHawaiian.name=
+#item.blooddp.sliceMeatLvr.name=
 
 #Tools
 item.blooddp.toolRPin.name=Rolling Pin
 item.blooddp.toolKnife.name=Kitchen Knife
 item.blooddp.toolCutter.name=Pizza Cutter[NYI]
 item.blooddp.toolChurn.name=Churn
-item.blooddp.toolPress.name=
+#item.blooddp.toolPress.name=
 item.blooddp.toolFlail.name=Threshing Flail
 item.blooddp.knifeBlade.name=Knife Blade
 
 #Blocks
-
+block.blooddp.cropTomato0=Tomato Crop Stage 1
+block.blooddp.cropTomato1=Tomato Crop Stage 2
+block.blooddp.cropTomato2=Tomato Crop Stage 3
+block.blooddp.cropTomato3=Tomato Crop Stage 4
+block.blooddp.cropTomato4=Tomato Crop Stage 5
 
 #CreativeTabs
 itemGroup.tab.bloodbdp:BBDP=Dimensionz Pizza Blocks

@@ -7,6 +7,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import bloods.common.dimenPizza.Blooddp;
 import bloods.common.dimenPizza.reference.Reference;
+import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
@@ -16,11 +17,9 @@ import net.minecraft.world.World;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 
-public class itemArmor extends ItemArmor
+public class itemBloodArmor extends ItemArmor
 {
-	public String textureName;
-
-	public itemArmor(ArmorMaterial material, int type, String name) {
+	public itemBloodArmor(ArmorMaterial material, int type, String name) {
 		super(material,0,type);
 		this.setUnlocalizedName(name);
 		this.setTextureName(Reference.Mod_ID + ":" + getUnlocalizedName());
@@ -75,6 +74,8 @@ public class itemArmor extends ItemArmor
 			}
 			else player.addPotionEffect(new PotionEffect(Potion.blindness.id, 30, 5));
 		}
+		
+		if (stack.getItem().equals(Blooddp.bootsBlooded)){player.fallDistance = 0;}
 	}
 
 
@@ -104,6 +105,14 @@ public class itemArmor extends ItemArmor
 		{
 			list.add("\u00A72Aleaf circlet from the ancient garden.");
 			list.add("\u00A74The leaves of heaven tend to turn from mortal garbs");
+		}
+		
+		if (stack.getItem().equals(Blooddp.bootsBlooded))
+		{
+			if (GuiScreen.isShiftKeyDown())
+			{
+				list.add("Negates fall damage");
+			}
 		}
 	}
 }
